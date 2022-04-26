@@ -4,10 +4,29 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs;
+  Dialogs, StdCtrls, ExtCtrls, ComCtrls, DBCtrls;
 
 type
   TfrmProduto = class(TForm)
+    StatusBar1: TStatusBar;
+    Panel1: TPanel;
+    btnIncluir: TButton;
+    btnAlterar: TButton;
+    btnExcluir: TButton;
+    btnConsultar: TButton;
+    btnConfirmar: TButton;
+    btnCancelar: TButton;
+    btnSair: TButton;
+    Panel2: TPanel;
+    lblCodigo: TLabel;
+    edtCodigo: TEdit;
+    chkProdutoAtivo: TCheckBox;
+    lblNome: TLabel;
+    edtNome: TEdit;
+    lblUnidade: TLabel;
+    edtUnidade: TEdit;
+    lblDescricao: TLabel;
+    memoDescricao: TDBMemo;
   private
     { Private declarations }
   public

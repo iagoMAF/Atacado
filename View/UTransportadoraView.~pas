@@ -4,13 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, ComCtrls;
+  Dialogs;
 
 type
   TfrmTransportadora = class(TForm)
-    StatusBar1: TStatusBar;
-    Panel1: TPanel;
-    Panel2: TPanel;
   private
     { Private declarations }
   public

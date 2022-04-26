@@ -1,6 +1,6 @@
 object frmAtacado: TfrmAtacado
-  Left = 313
-  Top = 129
+  Left = 485
+  Top = 156
   Width = 1133
   Height = 678
   Caption = 'Atacado'

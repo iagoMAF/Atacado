@@ -381,5 +381,9 @@ object frmAtacado: TfrmAtacado
         OnClick = ransportadora1Click
       end
     end
+    object Sair2: TMenuItem
+      Caption = 'Sair'
+      OnClick = Sair2Click
+    end
   end
 end

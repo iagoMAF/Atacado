@@ -1,6 +1,6 @@
 object frmCliente: TfrmCliente
-  Left = 1031
-  Top = 254
+  Left = 841
+  Top = 235
   Width = 575
   Height = 402
   Caption = 'Cadastro de Cliente'
@@ -319,6 +319,7 @@ object frmCliente: TfrmCliente
         'F'#237'sica'
         'Jur'#237'dica')
       TabOrder = 2
+      OnClick = rdgTipoPessoaClick
     end
   end
 end
