@@ -183,10 +183,10 @@ begin
    btnConsultar.Enabled := (vEstadoTela in [etPadrao]);
 
    btnConfirmar.Enabled :=
-      vEstadoTela in [etIncluir, etExcluir, etConsultar];
+      vEstadoTela in [etIncluir, etExcluir, etConsultar, etAlterar];
 
    btnCancelar.Enabled  :=
-      vEstadoTela in [etIncluir, etExcluir, etConsultar];
+      vEstadoTela in [etIncluir, etExcluir, etConsultar, etAlterar];
 
    case vEstadoTela of
 
@@ -215,6 +215,7 @@ begin
 
          if (edtNome.CanFocus) then
             (edtNome.SetFocus);
+
       end;
 
       etAlterar:
@@ -226,9 +227,6 @@ begin
 
             edtCodigo.Enabled    := False;
             btnAlterar.Enabled   := False;
-            btnConfirmar.Enabled := True;
-            btnCancelar.Enabled  := True;
-            btnSair.Enabled      := True;
 
             if (chkAtivo.CanFocus) then
                (chkAtivo.SetFocus);
@@ -236,15 +234,18 @@ begin
          end
          else
          begin
+
             edtCodigo.Enabled    := True;
-            //btnAlterar.Enabled   := True;
-            btnConfirmar.Enabled := True;
-            btnCancelar.Enabled  := True;
-            btnSair.Enabled      := True;
 
             if (edtCodigo.CanFocus) then
                (edtCodigo.SetFocus);
          end;
+      end;
+
+      etConsultar:
+      begin
+         stbStatusCliente.Panels[0].Text := 'Consulta';
+
 
       end;
 
@@ -276,7 +277,8 @@ end;
 
 procedure TfrmCliente.btnConsultarClick(Sender: TObject);
 begin
-   //Consultar
+   vEstadoTela := etConsultar;
+   DefineEstadoTela;
 end;
 
 procedure TfrmCliente.btnConfirmarClick(Sender: TObject);
