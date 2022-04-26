@@ -2,7 +2,10 @@ program Project1;
 
 uses
   Forms,
-  UPrincipalView in 'View\UPrincipalView.pas' {frmAtacado};
+  UPrincipalView in 'View\UPrincipalView.pas' {frmAtacado},
+  UClienteView in 'View\UClienteView.pas' {frmCliente},
+  UProdutoView in 'View\UProdutoView.pas' {frmProduto},
+  UTransportadoraView in 'View\UTransportadoraView.pas' {frmTransportadora};
 
 {$R *.res}
 

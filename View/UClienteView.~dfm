@@ -1,16 +1,95 @@
-object Form1: TForm1
-  Left = 464
-  Top = 179
-  Width = 1088
-  Height = 563
-  Caption = 'Form1'
+object frmCliente: TfrmCliente
+  Left = 712
+  Top = 295
+  Width = 570
+  Height = 335
+  Caption = 'Cadastro de Cliente'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
+  Position = poDesktopCenter
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
+  object stbStatusCliente: TStatusBar
+    Left = 0
+    Top = 277
+    Width = 554
+    Height = 19
+    Panels = <
+      item
+        Width = 50
+      end>
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 200
+    Width = 554
+    Height = 77
+    Align = alBottom
+    TabOrder = 1
+    object btnIncluir: TButton
+      Left = 274
+      Top = 11
+      Width = 75
+      Height = 25
+      Caption = 'Incluir'
+      TabOrder = 0
+    end
+    object btnAlterar: TButton
+      Left = 274
+      Top = 43
+      Width = 75
+      Height = 25
+      Caption = 'Alterar'
+      TabOrder = 1
+    end
+    object btnExcluir: TButton
+      Left = 354
+      Top = 11
+      Width = 75
+      Height = 25
+      Caption = 'Excluir'
+      TabOrder = 2
+    end
+    object btnConsultar: TButton
+      Left = 354
+      Top = 43
+      Width = 75
+      Height = 25
+      Caption = 'Consultar'
+      TabOrder = 3
+    end
+    object btnCancelar: TButton
+      Left = 465
+      Top = 11
+      Width = 75
+      Height = 25
+      Caption = 'Cancelar'
+      TabOrder = 4
+    end
+    object btnSair: TButton
+      Left = 465
+      Top = 43
+      Width = 75
+      Height = 25
+      Caption = 'Sair'
+      TabOrder = 5
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 554
+    Height = 200
+    Align = alClient
+    TabOrder = 2
+  end
 end
