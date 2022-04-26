@@ -18,11 +18,13 @@ type
     Produto1: TMenuItem;
     ransportadora1: TMenuItem;
     stbBarraStatus: TStatusBar;
+    Sair2: TMenuItem;
     procedure Sair1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Cliente1Click(Sender: TObject);
     procedure Produto1Click(Sender: TObject);
     procedure ransportadora1Click(Sender: TObject);
+    procedure Sair2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -98,6 +100,11 @@ begin
       Screen.Cursor := crDefault;
 
    end;
+end;
+
+procedure TfrmAtacado.Sair2Click(Sender: TObject);
+begin
+   Close;
 end;
 
 end.

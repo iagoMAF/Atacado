@@ -378,6 +378,7 @@ object frmAtacado: TfrmAtacado
       end
       object ransportadora1: TMenuItem
         Caption = 'Transportadora'
+        OnClick = ransportadora1Click
       end
     end
   end
