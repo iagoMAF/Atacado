@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, ComCtrls, uMessageUtil, UEnumerationUtil,
-  UCriptografiaUtil, UClassFuncoes, Consts;
+  UCriptografiaUtil, UClassFuncoes, Consts, Mask;
 
 type
   TfrmCliente = class(TForm)
@@ -18,6 +18,27 @@ type
     btnConsultar: TButton;
     btnCancelar: TButton;
     btnSair: TButton;
+    lblCodigo: TLabel;
+    edtCodigo: TEdit;
+    chkAtivo: TCheckBox;
+    lblNome: TLabel;
+    edtNome: TEdit;
+    lblCpfCnpj: TLabel;
+    edtCPFCNPJ: TMaskEdit;
+    gbrEndereco: TGroupBox;
+    lblEndereco: TLabel;
+    edtEndereco: TEdit;
+    lblNumero: TLabel;
+    edtNumero: TEdit;
+    lblComplemento: TLabel;
+    edtComplemento: TEdit;
+    lblBairro: TLabel;
+    edtBairro: TEdit;
+    lblUF: TLabel;
+    cmbUF: TComboBox;
+    lblCidade: TLabel;
+    edtCidade: TEdit;
+    rdgTipoPessoa: TRadioGroup;
     procedure FormShow(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
@@ -28,6 +49,8 @@ type
     vKey        : Word;
 
     vEstadoTela : TEstadoTela;
+
+    procedure CamposEnabled(pOpcao : Boolean);
 
   public
     { Public declarations }
@@ -65,7 +88,7 @@ begin
                'Deseja realmente abortar essa operação? ')) then
             begin
                vEstadoTela := etPadrao;
-               DefineEstadoTela;
+               //DefineEstadoTela;
             end;
          end
          else
@@ -82,6 +105,34 @@ procedure TfrmCliente.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
    Action     := caFree;
    frmCliente := nil;
+end;
+
+procedure TfrmCliente.CamposEnabled(pOpcao: Boolean);
+var
+   i : Integer;
+begin
+   for i := 0 to pred(ComponentCount) do
+   begin
+
+      if (Components[i] is TEdit) then
+         (Components[i] as TEdit).Enabled       := pOpcao;
+
+      if (Components[i] is TMaskEdit) then
+         (Components[i] as TMaskEdit).Enabled   := pOpcao;
+
+      if (Components[i] is TCheckBox) then
+         (Components[i] as TCheckBox).Enabled   := pOpcao;
+
+      if (Components[i] is TComboBox) then
+         (Components[i] as TComboBox).Enabled   := pOpcao;
+
+      if (Components[i] is TRadioGroup) then
+         (Components[i] as TRadioGroup).Enabled := pOpcao;
+
+   end;
+
+   gbrEndereco.Enabled := pOpcao;
+   
 end;
 
 end.

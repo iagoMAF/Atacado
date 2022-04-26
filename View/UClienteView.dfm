@@ -1,6 +1,6 @@
 object frmCliente: TfrmCliente
-  Left = 476
-  Top = 247
+  Left = 1018
+  Top = 230
   Width = 575
   Height = 402
   Caption = 'Cadastro de Cliente'
@@ -14,6 +14,7 @@ object frmCliente: TfrmCliente
   OldCreateOrder = False
   Position = poDesktopCenter
   OnClose = FormClose
+  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   PixelsPerInch = 96
@@ -34,38 +35,42 @@ object frmCliente: TfrmCliente
     Width = 559
     Height = 77
     Align = alBottom
-    TabOrder = 1
+    TabOrder = 2
     object btnIncluir: TButton
-      Left = 278
+      Left = 230
       Top = 11
       Width = 75
       Height = 25
       Caption = 'Incluir'
       TabOrder = 0
+      OnClick = btnIncluirClick
     end
     object btnAlterar: TButton
-      Left = 278
+      Left = 230
       Top = 43
       Width = 75
       Height = 25
       Caption = 'Alterar'
       TabOrder = 1
+      OnClick = btnAlterarClick
     end
     object btnExcluir: TButton
-      Left = 358
+      Left = 310
       Top = 11
       Width = 75
       Height = 25
       Caption = 'Excluir'
       TabOrder = 2
+      OnClick = btnExcluirClick
     end
     object btnConsultar: TButton
-      Left = 358
+      Left = 310
       Top = 43
       Width = 75
       Height = 25
       Caption = 'Consultar'
       TabOrder = 3
+      OnClick = btnConsultarClick
     end
     object btnCancelar: TButton
       Left = 469
@@ -74,6 +79,7 @@ object frmCliente: TfrmCliente
       Height = 25
       Caption = 'Cancelar'
       TabOrder = 4
+      OnClick = btnCancelarClick
     end
     object btnSair: TButton
       Left = 469
@@ -82,6 +88,16 @@ object frmCliente: TfrmCliente
       Height = 25
       Caption = 'Sair'
       TabOrder = 5
+      OnClick = btnSairClick
+    end
+    object btnConfirmar: TButton
+      Left = 390
+      Top = 11
+      Width = 75
+      Height = 25
+      Caption = 'Confirmar'
+      TabOrder = 6
+      OnClick = btnConfirmarClick
     end
   end
   object Panel2: TPanel
@@ -90,7 +106,7 @@ object frmCliente: TfrmCliente
     Width = 559
     Height = 267
     Align = alClient
-    TabOrder = 2
+    TabOrder = 1
     object lblCodigo: TLabel
       Left = 18
       Top = 24
@@ -150,14 +166,14 @@ object frmCliente: TfrmCliente
       Top = 51
       Width = 472
       Height = 21
-      TabOrder = 2
+      TabOrder = 3
     end
     object edtCPFCNPJ: TMaskEdit
       Left = 76
       Top = 83
       Width = 121
       Height = 21
-      TabOrder = 3
+      TabOrder = 4
     end
     object gbrEndereco: TGroupBox
       Left = 8
@@ -165,7 +181,7 @@ object frmCliente: TfrmCliente
       Width = 537
       Height = 145
       Caption = ' Endere'#231'o '
-      TabOrder = 4
+      TabOrder = 5
       object lblEndereco: TLabel
         Left = 11
         Top = 27
@@ -291,6 +307,18 @@ object frmCliente: TfrmCliente
         Height = 21
         TabOrder = 5
       end
+    end
+    object rdgTipoPessoa: TRadioGroup
+      Left = 256
+      Top = 13
+      Width = 153
+      Height = 33
+      Caption = ' Tipo de Pessoa '
+      Columns = 2
+      Items.Strings = (
+        'F'#237'sica'
+        'Jur'#237'dica')
+      TabOrder = 2
     end
   end
 end
