@@ -217,6 +217,37 @@ begin
             (edtNome.SetFocus);
       end;
 
+      etAlterar:
+      begin
+         stbStatusCliente.Panels[0].Text := 'Alteração';
+
+         if (edtCodigo.Text <> EmptyStr) then
+         begin
+
+            edtCodigo.Enabled    := False;
+            btnAlterar.Enabled   := False;
+            btnConfirmar.Enabled := True;
+            btnCancelar.Enabled  := True;
+            btnSair.Enabled      := True;
+
+            if (chkAtivo.CanFocus) then
+               (chkAtivo.SetFocus);
+
+         end
+         else
+         begin
+            edtCodigo.Enabled    := True;
+            //btnAlterar.Enabled   := True;
+            btnConfirmar.Enabled := True;
+            btnCancelar.Enabled  := True;
+            btnSair.Enabled      := True;
+
+            if (edtCodigo.CanFocus) then
+               (edtCodigo.SetFocus);
+         end;
+
+      end;
+
    end;
 
 end;
@@ -234,7 +265,8 @@ end;
 
 procedure TfrmCliente.btnAlterarClick(Sender: TObject);
 begin
-   //Alterar
+   vEstadoTela := etAlterar;
+   DefineEstadoTela;
 end;
 
 procedure TfrmCliente.btnExcluirClick(Sender: TObject);
